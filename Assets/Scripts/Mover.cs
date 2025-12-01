@@ -1,16 +1,21 @@
+using System;
 using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField] float moveSpeed = 10f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0, 0.01f);
+        float xValue = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        float yValue = 0f;//Input.GetAxis("Jump");
+        float zValue = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.Translate(xValue, yValue, zValue);
     }
 }
