@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class Spinner : MonoBehaviour
+{
+    [SerializeField] float xAngle = 0f;
+    [SerializeField] float yAngle = 2f;
+    [SerializeField] float zAngle = 0f;
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        spin();
+    }
+
+    void spin()
+    {
+        transform.Rotate(xAngle, yAngle, zAngle);
+    }
+}
